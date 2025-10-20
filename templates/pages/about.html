@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide mb-5" data-bs-ride="carousel">
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="upcolor position-absolute d-flex justify-content-center align-items-center"><h1 class="text-white mb-5 pb-5">About</h1></div>
+      <img src="static/images/hero.jpg" alt="Los Angeles" class="d-block position-relative downcolor" style="width:100%">
+    </div>
+  </div>
+</div>
+
+<!-- body part-->
+ <div class="container-fluid mb-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 offset-lg-1">
+      <div>
+        {% for d in data_about %}
+        
+        <img class="box_design me-lg-4 ms-4 float-lg-end mb-5 scrol-left" src="media/{{d.image}}" alt="producer" width="300px">
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-4 col-sm-12 d-flex flex-column justify-content-center text-white">
+      <p align="justify" class="scrol-right">At Beatz, music isn't just sound—it's energy, emotion, and identity. Founded by a passionate producer driven by the love for rhythm and melody, Beatz was built to fuel artists with high-quality, industry-ready instrumentals.</p>
+      
+      <p align="justify" class="scrol-right">With years of experience in sound design, sampling, and mixing, we specialize in crafting beats that hit hard, feel real, and stay memorable. Whether you're an up-and-coming rapper, an R&B vocalist, or a brand looking for sonic identity, we're here to provide the sound that moves you forward.</p>
+
+      <p align="justify" class="scrol-right">I'm Beatz Producer, a passionate music producer with over 5 years of experience in crafting versatile and unique beats across genres like Hip-Hop, Trap, R&B, Lo-Fi, Afrobeat, EDM, and more.</p>
+
+      <p align="justify" class="scrol-right">I've collaborated with rising artists, indie labels, and YouTubers globally to help elevate their sound and presence. My mission is simple — create music that resonates, inspires, and stands out.</p>
+    </div>
+  </div>
+ </div>
+
+ <div class="container-fluid mb-5 mt-5">
+  <div class="col-12 d-flex justify-content-center align-items-center scrol-up">
+    <div class=" box_design front text-white position-absolute z-1 d-flex justify-content-center align-items-center">
+      <div class="fs-lg-4 front-inner">
+        <center><h3 class="text-decoration-underline mb-5">Our mission</h3></center>
+        <p>At Beatz, our mission is simple:</p>
+        <p class="justify">Empower artists with world-class production that captures emotion, tells stories, and pushes creative boundaries. We believe that every artist deserves beats that feel right, sound professional, and inspire greatness—no matter where they are in their journey.</p>
+      </div>
+    </div>
+    <div class="back position-relative z-n1"></div>
+  </div>
+ </div>
+
+ <div class="container  mb-5">
+  <center class="mb-5"><h1 class="text-primary head_font_style">Why choose us</h1></center>
+  <div class="row main-choose text-secondary gap-3">
+    <div class="feature border rounded ms-sm-3 scrol-round">
+      <center><h4 class="my-3 text-white">Quality Over Quantity</h4></center>
+      <p align="center" class="scrol-left">Every beat is mixed, mastered, and engineered for clarity and impact. No fillers. Just fire.</p>
+    </div>
+    <div class="feature border rounded scrol-round">
+      <center><h4 class="my-3 text-white">Artist-First Approach</h4></center>
+      <p align="center">Your sound comes first. We collaborate closely to ensure the beat supports your flow, tone, and message.</p>
+    </div>
+    <div class="feature border rounded scrol-round">
+      <center><h4 class="my-3 text-white">Fast Turnaround</h4></center>
+      <p align="center">Need a custom beat or quick mix? We deliver on time without compromising quality.</p>
+    </div>
+    <div class="feature border rounded scrol-round">
+      <center><h4 class="my-3 text-white">100% Independent & Original</h4></center>
+      <p align="center">No recycled loops. No industry copies. Every track is created from scratch, just for you.</p>
+    </div>
+  </div>
+ </div>
+
+{% endblock  %}

@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Carousel -->
+<div id="demo" class="carousel slide mb-5" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="upcolor position-absolute"></div>
+      <img src="static/images/hero.jpg" alt="Los Angeles" class="d-block position-relative downcolor" style="width:100%">
+    </div>
+    <div class="carousel-item">
+        <div class="upcolor position-absolute"></div>
+      <img src="static/images/hero.jpg" alt="Chicago" class="d-block position-relative downcolor" style="width:100%">
+    </div>
+    <div class="carousel-item">
+        <div class="upcolor position-absolute"></div>
+      <img src="static/images/hero.jpg" alt="New York" class="d-block position-relative downcolor" style="width:100%">
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- body section -->
+<div class="container-fluid mt-5 mb-5">
+    <center class="mb-5"><h1 class="text-primary head_font_style">About SK BEATZ</h1></center>
+    <div class="row trigger">
+        <div class="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-end pe-lg-5">
+          {% for p in photo %}
+          <img class="box_design img-fluid scrol-left" src="media/{{p.image}}" alt="image" style="width: 400px;">
+          {% endfor %}
+          
+        </div>
+        <div class="col-lg-6  col-md-6 col-sm-12 mb-3 text-white d-flex flex-column align-items-start justify-content-center">
+            <p align="justify" class="pe-5 scrol-right">Hi I am Sumeet, I'm Beatz Producer, a passionate music producer with over 5 years of experience in crafting versatile and unique beats across genres like Hip-Hop, Trap, R&B, Lo-Fi, Afrobeat, EDM, and more.</p>
+            <p align="justify" class="pe-5 scrol-right">I've collaborated with rising artists, indie labels, and YouTubers globally to help elevate their sound and presence. My mission is simple — create music that resonates, inspires, and stands out.</p>
+            <p align="justify" class="pe-5 scrol-right">Whether you need a custom beat, full song production, or mixing & mastering, I'm here to help you shape your sound.</p>
+            <p align="justify" class="scrol-right">With years of experience in sound design, sampling, and mixing, we specialize in crafting beats that hit hard, feel real, and stay memorable. Whether you're an up-and-coming rapper, an R&B vocalist, or a brand looking for sonic identity, we're here to provide the sound that moves you forward.</p>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="container">
+      <center class="mb-5"><h1 class="head_font_style text-primary">My recent works</h1></center>
+      <div class="row">
+        {% for d in photo2 %}
+        <div class="col-lg-6 col-md-5 col-sm-12 mb-4 d-flex justify-content-center align-items-center box_design_up">
+          <i class="fa fa-2x fa-brands fa-youtube text-danger position-absolute middle z-2" style="font-size: 70px;"></i>
+          <a href="{{d.link}}" target="_blank">
+          <img class="img-fluid box_design_down scrol-up" src="media/{{d.img}}" alt="work1"></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    </div>
+</div>
+
+
+
+<!-- worked with -->
+<div class="container-fluid py-5">
+  <div class="row">
+    <center><h1 class="head_font_style text-primary py-5">Worked with</h1></center>
+    <div class="col-lg-3 col-md-3 col-sm-12 mb-3 ">
+      <div class=" d-flex justify-content-center align-items-center scrol-round">
+        <div class="outer1"></div>
+        <div class="outer2"></div>
+        <img class="artist-img z-1 big-hover " src="static/images/artist.jpg" alt="artist" height="200px">
+      </div>
+      <div class="scrol-round">
+          <p class="text-white d-flex justify-content-center mt-5 fs-3">BBK Kings</p>
+          <p align="center" class="text-white">I had the pleasure of collaborating with the talented artist, BBK Kings.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12 mb-3">
+      <div class=" d-flex justify-content-center align-items-center scrol-round">
+        <div class="outer1"></div>
+        <div class="outer2"></div>
+        <img class="artist-img z-1 big-hover " src="static/images/artist1.png" alt="artist" height="200px">
+      </div>
+      <div class="scrol-round">
+          <p class="text-white d-flex justify-content-center mt-5 fs-3">SWAGatam</p>
+          <p align="center" class="text-white">I had the pleasure of collaborating with the talented artist, SWAGatam.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12 mb-3">
+      <div class=" d-flex justify-content-center align-items-center scrol-round">
+        <div class="outer1"></div>
+        <div class="outer2"></div>
+        <img class="artist-img z-1 big-hover" src="static/images/knexx.jpg" alt="artist" height="195px">
+      </div>
+      <div class="scrol-round">
+          <p class="text-white d-flex justify-content-center mt-5 fs-3">NEXX</p>
+          <p align="center" class="text-white">I had the pleasure of collaborating with the talented artist, NEXX.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12 mb-3">
+      <div class=" d-flex justify-content-center align-items-center scrol-round">
+        <div class="outer1"></div>
+        <div class="outer2"></div>
+        <img class="artist-img z-1 big-hover " src="static/images/x7.jpg" alt="artist" height="195px">
+      </div>
+      <div class="scrol-round">
+          <p class="text-white d-flex justify-content-center mt-5 fs-3">X7</p>
+          <p align="center" class="text-white">I had the pleasure of collaborating with the talented artist, X7.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- contact -->
+<div class="container-fluid mb-5">
+  <center><h1 class="head_font_style text-primary py-5">Contact Us</h1></center>
+  <div class="row ms-5">
+    <div class="col-lg-5 col-md-5 col-sm-12 mb-2">
+      <div class="float-end me-5">
+        <img class="box_design img-fluid" src="static/images/logo.jpg" alt="photo" height="300px">
+      </div>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-12 mb-3">
+      <p class="text-danger text-decoration-underline">{{msg}}</p>
+      <form method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class=" mt-1 text-white">
+          <div class="col-lg-6 col-md-4 col-sm-12 mb-2">
+            <label for="">Name:</label>
+            <input class="form-control infield" type="text" name="name" placeholder="Enter your name" pattern="[A-Za-z]{2,20}" title="Only alphabets are allowed" required>
+          </div>
+          <div class="col-lg-6 col-md-4 col-sm-12 mb-2">
+            <label for="">Email:</label>
+            <input class="form-control infield" type="email" name="email" placeholder="Enter your email id"  required>
+          </div>
+          <div class="col-12 mt-3">
+            <input class="btn btn-success ms-5 px-5" type="submit" value="Submit">
+            <input class="btn btn-warning px-5" type="reset" value="Cancle">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock  %}
