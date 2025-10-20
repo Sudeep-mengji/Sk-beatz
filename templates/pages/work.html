@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Carousel -->
+<div id="demo" class="carousel slide mb-5" data-bs-ride="carousel">
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="upcolor position-absolute d-flex justify-content-center align-items-center"><h1 class="text-white mb-5 pb-5">Works</h1></div>
+      <img src="static/images/hero.jpg" alt="Los Angeles" class="d-block position-relative downcolor" style="width:100%">
+    </div>
+  </div>
+</div>
+
+<!-- work intro -->
+<div class="container-fluid mb-5">
+  <div class="row text-white">
+    <div class="col-lg-4 col-md-5 col-sm-12 mb-5">
+      <img class="float-end me-lg-3 me-2 box_design scrol-left" src="static/images/about3.jpg" alt="about3" height="500px">
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-12 mb-2 d-flex flex-column justify-content-center scrol-right">
+      <h5 class="mb-3 text-decoration-underline">Crafting Sounds That Resonate</h5>
+      <p align="justify">At Beatz Producer, every beat tells a story. From underground trap anthems to smooth R&B grooves and high-energy pop hits, our catalog showcases versatility, creativity, and quality production. We don't just make music — we build soundscapes that inspire artists and elevate their projects.</p>
+      <h5 class="mb-3 text-decoration-underline"> What We Do</h5>
+      <ul>
+        <li>Custom Beats: Tailored instrumentals for artists, YouTubers, and creators.</li>
+        <li>Exclusive Projects: Full production for albums, singles, and EPs.</li>
+        <li>Collaborations: Partnered with emerging and established talent to create unique sonic identities.</li>
+        <li>Mixing & Mastering: Industry-standard post-production for a polished finish.</li>
+      </ul>
+      <h5 class="mb-3 text-decoration-underline">Artists We've Worked With</h5>
+      <p>From fresh voices to known names, we've collaborated with a wide range of talent across genres:</p>
+      <ul>
+        <li>BBK Kings</li>
+        <li>SWAGatam</li>
+        <li>NEXX</li>
+        <li>X7</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- samples sound -->
+
+<center><h1 class="head_font_style text-primary py-5">Beatz samples</h1></center>
+
+<div class="container mb-5 scrol-up">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class="d-flex">
+        <input class="form-control" type="text" name="search" placeholder="Search here">
+        <button class="btn btn-primary" type="submit">search</button>
+        </div>
+      </form>
+      <p class="text-white mt-5">{{msg}}</p>
+    </div>
+  </div>
+</div> 
+
+<div class="container scrol-up">
+  <div class="row">
+    {% for song in songs %}
+    <div class="col-lg-4 col-md-3 col-sm-12 mb-2">
+        <div class="song">
+            {% if song.album_art %}
+                <img src="{{ song.album_art.url }}" alt="{{ song.title }}" class="album-art">
+            {% else %}
+                <img src="https://via.placeholder.com/150/00bcd4/FFFFFF?text=Album+Art" class="album-art">
+            {% endif %}
+            <h2 class="text-white">{{ song.title }}</h2>
+            <h3>{{ song.artist }}</h3>
+
+            <div class="audio-player" data-src="{{ song.audio_file.url }}">
+                <div class="controls">
+                    <button class="play-btn">▶️</button>
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="time">
+                    <span class="current-time">0:00</span>
+                    <span class="duration">0:00</span>
+                </div>
+                
+                <div class="extra-controls">
+                  <i class="fa-solid fa-volume-high text-white"></i>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1">
+                    <select class="speed-select">
+                        <option value="1">1x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                    <a href="{{ song.audio_file.url }}" download class="download-btn">⬇️</a>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+<div class="container text-white mb-5">
+  <center><h1 class="head_font_style text-primary py-5">My Beatz Pricing</h1></center>
+  <div class="row">
+
+    <div>
+      <center><p>Choose Your Beat Package</p>
+      <p>Get the perfect sound for your project — whether you're an indie artist, a content creator, or a professional musician.</p></center>
+      <p></p>
+      
+    </div>
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3 scrol-round">
+      <div class="col">
+        <div class="card bg-transparent text-white border-white h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-decoration-underline">Basic Beat</h5>
+            <p class="card-text">
+              <li class="ms-2">Perfect for personal or non-commercial use</li>
+              <li class="ms-2">High-quality MP3 file</li>
+              <li class="ms-2">One-time license for single use</li>
+              <li class="ms-2">Delivery within 24 hours</li>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-transparent text-white border-white h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-decoration-underline">Premium Beat</h5>
+            <p class="card-text">
+              <li class="ms-2">For professional and commercial projects</li>
+              <li class="ms-2">High-quality MP3 + WAV files</li>
+              <li class="ms-2">3 revisions included</li>
+              <li class="ms-2">Delivery within 12 hours</li>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-transparent text-white border-white h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-decoration-underline">Exclusive Beat</h5>
+            <p class="card-text">
+              <li class="ms-2">Full ownership rights — beat removed from catalog</li>
+              <li class="ms-2">All stems (WAV, MIDI, project files) included</li>
+              <li class="ms-2">Priority mixing/mastering support</li>
+              <li class="ms-2">1-on-1 collaboration session</li>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <center>
+      <p class="my-4">At Beatz Producer, we believe great music should be accessible to everyone.<br/>
+        Choose a plan that fits your vibe and your budget.<br/>
+        You can scan the QR code or click Buy Now to instantly purchase and get your beats delivered.</p>
+    </center>
+
+    <div class="col-lg-8 col-md-6 col-sm-12 offset-lg-2 d-flex g-10 border rounded scrol-round2">
+      <div>
+        <p class="text-white ms-3 me-5 mt-5">Discover the best pricing for your project</p>
+        <div class="text-white mx-5 mt-2">
+          <h3 class="font-semibold "><li>Basic Beat</li></h3>
+          <p class="">For personal projects</p>
+          <p class=" font-bold ">$10</p>
+        </div>
+        <div class="text-white mx-5">
+          <h3 class=" font-semibold"><li>Premium Beat</li></h3>
+          <p class="">For commercial use</p>
+          <p class="font-bold">$15</p>
+        </div>
+        <div class="text-white mx-5">
+          <h3 class="font-semibold"><li>Exclusive Beat</li></h3>
+          <p class="">Limited rights + full license</p>
+          <p class="font-bold">$30</p>
+        </div>
+      </div>
+      <img class="QR " src="static/images/QR code.jpg" alt="QR code">
+    </div>
+  </div>
+</div>
+
+
+{% endblock  %}

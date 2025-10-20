@@ -1,0 +1,201 @@
+.audio-outer{
+    height: 100px;
+    width: 1200px;
+    border: 2px solid white;
+    display: flex;
+}
+
+
+
+.audio-icon{
+    color: white;
+    border: 2px solid white;
+    height: 100px;
+    width: 100px;
+    background-image: url('/static/images/audio1.png');
+    background-size: cover;
+}
+
+.audio-btn{
+    width: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.audio-input{
+    width: 900px;
+}
+
+.inner-input{
+    -webkit-appearance: none;
+    width: 900px;
+    height: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.inner-input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: #0A0F2C;
+    border-radius: 50%;
+    border: 6px solid #fff;
+}
+
+.audio-body{
+    width: 1000px;
+}
+.QR{
+    height: 390px;
+    margin-top: 23px;
+}
+
+@media only screen and (max-width:576px) {
+    .audio-outer{
+        width: 350px;
+    }
+
+    .audio-icon{
+        width: 300px;
+    }
+    .inner-input,.audio-input{
+        width: 130px;
+    }
+    .QR{
+        height: 100px;
+        margin-top: 50px;
+    }
+}
+
+
+/* new code */
+
+h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .song {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 30px;
+            width: 380px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .song:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+        }
+
+        .album-art {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px auto 15px;
+            border: 3px solid #00bcd4;
+            object-fit: cover;
+            transition: transform 0.5s linear;
+        }
+
+        .rotate {
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .song h2 {
+            font-size: 1.3em;
+            margin: 10px 0 5px;
+        }
+
+        .song h3 {
+            font-size: 0.9em;
+            color: #bbb;
+            margin: 0 0 15px;
+        }
+
+        .audio-player {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 15px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .play-btn {
+            background: #00bcd4;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .play-btn:hover {
+            background: #0097a7;
+        }
+
+        .progress {
+            width: 100%;
+            height: 6px;
+            background: #333;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #00bcd4;
+            transition: width 0.1s linear;
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #aaa;
+            margin-top: 6px;
+        }
+
+        .extra-controls {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        .volume-slider {
+            width: 60%;
+        }
+
+        .speed-select {
+            background: #12183B;
+            color: white;
+            border: 1px solid #00bcd4;
+            border-radius: 10px;
+            padding: 5px;
+        }

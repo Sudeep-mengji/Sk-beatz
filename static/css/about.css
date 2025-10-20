@@ -1,0 +1,38 @@
+.back{
+    height: 400px;
+    width: 1300px;
+    background-image: url('/static/images/about2.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.front{
+    height: 400px;
+    width: 1300px;
+    background-color: rgba(15, 21, 37, 0.7);
+}
+
+.front-inner{
+    width: 800px;
+}
+
+.feature{
+    width: 312px;
+    transition-property: box-shadow;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+}
+
+.feature:hover{
+    box-shadow: 0px 0px 35px 10px rgba(0, 0, 255, 0.764);
+}
+
+@media only screen and (max-width:576px) {
+    .feature{
+        margin-left: 45px;
+    }
+    .front,.front-inner,.back{
+        width: 300px;
+    }
+    
+}
